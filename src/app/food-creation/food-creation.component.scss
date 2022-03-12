@@ -1,0 +1,9 @@
+.modal-card-head{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.modal-card-foot{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

@@ -1,0 +1,20 @@
+<div class="main" [id]="food.dishName">
+    <div class="header" (click)="toggle()">
+      <p>{{food.dishName}}</p>
+      <span><fa-icon [icon]="icon"></fa-icon></span>
+    </div>
+    <div *ngIf="active" class="body">
+      <div class="section">
+        <h1> Ingredients</h1>
+        <div class="content">
+          <p>{{food.ingredients}}</p>
+        </div>
+      </div>
+      <div class="section">
+        <h1> Age Group</h1>
+        <div class="content">
+          <p>{{food.ageGroup}}</p>
+        </div>
+      </div>
+    </div>
+  <div>

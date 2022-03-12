@@ -1,0 +1,25 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5vh;
+    background-color: rgb(240, 216, 179);
+    height: 95vh;
+    gap:10vh
+}
+.suggest{
+    text-align: center;
+}
+.cardsy{
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+}
+.cardy{
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+}
+.button{
+    height: 5vh;
+}

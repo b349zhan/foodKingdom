@@ -1,0 +1,26 @@
+<div class="main">
+    <h1><strong>Welcome to Admin Page: {{auth.user.displayName}}</strong> </h1>
+    <h3><strong>Current User Count: {{users.length}} </strong> </h3>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Index</th>
+            <th>Display Name</th>
+            <th>Email</th>
+            <th>Account Creation Time</th>
+            <th>Last Log In</th>
+            <th>Role</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users; index as i">
+                <td>{{i}}</td>
+                <td>{{user.displayName}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.create_date_time}}</td>
+                <td>{{user.last_log_in}}</td>
+                <td>{{user.role}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

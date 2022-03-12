@@ -1,0 +1,78 @@
+<section class = "section">   
+    <form class = "container" [formGroup]="form">
+        <span class = "title">
+            Create Your Own Dish
+        </span>
+        <br>
+        <br>
+        <div class = "field">
+            <label for = "name">Dish Name</label>
+            <div class = "control">
+                <input formControlName="dishName" #dishName class = "input" type = "text" placeholder = "Enter name for the dish..." id="name" required>
+                <div class="has-text-danger" *ngIf="form.get('dishName')?.touched && form.get('dishName')?.errors?.['required']"> Dish Name is required</div>
+            </div>
+        </div>
+        <div class = "field">
+            <label for="ingredients">Ingredients</label>
+            <div class = "control">
+                <input formControlName="ingredients" class = "input" type = "text" placeholder = "Enter comma separated ingredients" id="ingredients" required>
+                <div class="has-text-danger" *ngIf="form.get('ingredients')?.touched && form.get('ingredients')?.errors?.['required']"> Ingredients specification is required</div>
+            </div>
+        </div>
+
+        <span class = "is-size-5">
+            Recommended Age Group
+        </span>
+    
+        <div class = "field">
+            <div class = "control">
+                <div class = "select">
+                    <select formControlName="ageGroup">
+                        <option></option>
+                        <option>0 - 6 </option>
+                        <option>7 - 27</option>
+                        <option>27 - 55</option>
+                        <option> > 55</option>
+                    </select>
+                </div>
+                <div class="has-text-danger" *ngIf="form.get('ageGroup')?.touched && form.get('ageGroup')?.errors?.['required']"> Age Group Selection is required</div>
+            </div>
+        </div>
+        <br>
+        
+        <span class = "is-size-5">
+            Check for Spicy
+        </span>
+        <div class = "field">
+            <div class = "control">
+                <label class = "checkbox">
+                <input formControlName="isSpicy" type = "checkbox">
+                    People should be cautious about the spicy level.
+                </label>
+            </div>
+        </div>
+        
+        <div class = "field">
+            <div class = "control">
+                <button class = "button is-link" [disabled]="form.invalid" (click)="create_dish(form.value)">Create My Dish</button>
+            </div>
+        </div>
+    </form>
+
+    <div class="modal is-active" id="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+          <header class="modal-card-head">
+            <button class="delete" aria-label="close" (click)="close_modal()"></button>
+          </header>
+          <section class="modal-card-body">
+            Congratulations! You just create your own dish: {{most_recent_dish_name}}
+          </section>
+          <footer class="modal-card-foot">
+            <button class="button" routerLink="/food">Manage My Dish</button>
+            <button class="button" routerLink="/create" (click)="close_modal()">Create Another Dish</button>
+          </footer>
+        </div>
+    </div>
+      
+ </section>

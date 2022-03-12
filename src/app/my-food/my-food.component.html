@@ -1,0 +1,17 @@
+<div class="main">
+    <div class="header">
+      <h1>Currenty {{foods.length}} Dishes</h1>
+    </div>
+    <div class="suggest" *ngIf="foods.length==0">
+      <p>Currently here's no dish under your account!</p>
+      <p> Let's create some dishes!</p>
+      <button class="button" routerLink="/create"> Create My Own Dish</button>
+    </div>
+    <div class="cardsy">
+      <div class="cardy" *ngFor="let food of foods">
+        <button class="button is-danger" (click)="delete_dish(food)">Remove</button>
+        <zippy [food]="food">
+        </zippy>
+      </div>
+    </div>
+</div>
