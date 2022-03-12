@@ -12,12 +12,9 @@ export class MyFoodComponent implements OnInit {
   foods:Dish[]=[];
   constructor(private food_service:FoodService) { 
     this.foods = [];
-    console.log("constructing food")
     this.food_service.get_all_food().then(result=>{
-      console.log("result:",result)
       if (!result.val()) return;
       Object.entries(result.val()).forEach(([key,value])=>{
-        console.log("pushing", value)
         this.foods.push(value as Dish);
       });
     });

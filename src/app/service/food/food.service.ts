@@ -12,6 +12,7 @@ export class FoodService {
 
   create(dish:Dish){
     const db = getDatabase();
+    console.log("Creating dish", this.auth.user)
     set(ref(db, 'dishes/' + this.auth.user.displayName+"/"+dish.dishName),dish);
   }
 

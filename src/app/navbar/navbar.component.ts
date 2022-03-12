@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
-import { Role } from '../models/role';
 import { AuthService } from '../service/auth/auth.service';
 
 @Component({
@@ -18,9 +17,5 @@ export class NavbarComponent implements OnInit {
 
   logout(){
     this.auth.logout();
-  }
-  logUser(){
-    console.log(this.auth.user);
-    let today = new Date().toLocaleString();
   }
 }

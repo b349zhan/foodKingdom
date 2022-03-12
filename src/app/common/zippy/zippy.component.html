@@ -5,16 +5,28 @@
     </div>
     <div *ngIf="active" class="body">
       <div class="section">
-        <h1> Ingredients</h1>
+        <h1> Ingredients:</h1>
         <div class="content">
           <p>{{food.ingredients}}</p>
         </div>
       </div>
       <div class="section">
-        <h1> Age Group</h1>
+        <h1> Age Group:</h1>
         <div class="content">
           <p>{{food.ageGroup}}</p>
         </div>
       </div>
+      <div *ngIf="food.isSpicy; then spicy else nospicy;">
+      </div>
+      <ng-template #spicy>
+        <div class="section">
+          This is very spicy, please be cautios!
+        </div> 
+      </ng-template>
+      <ng-template #nospicy>
+        <div class="section">
+          Nah, this is not spicy at all!
+        </div>
+      </ng-template>
     </div>
   <div>
